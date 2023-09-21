@@ -10,14 +10,17 @@
     const notas = prompt("Quantas notas o aluno obteve?");
 
     //PROCESSAMENTO
+    let soma = 0
 
-    for (let contador = 1; contador < notas.length; contador++) {
-        const element = notas[contador];
+    for (let contador = 1; contador < notas; contador++) {
+       let nota = Number(prompt("Informe a nota").trim());
+       soma += nota;
         
     }
-     
-    
 
+    let media = soma / notas
+     
     //SAÍDA
+    alert(`A média das notas do aluno é: ${media.toFixed(1)}`);
 
 </script>
