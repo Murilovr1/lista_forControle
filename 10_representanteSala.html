@@ -8,11 +8,35 @@
     */
 
     //ENTRADA
-
+       const candidato1 = prompt("Informe o nome do candidato 1:");
+    const candidato2 = prompt("Informe o nome do candidato 2:");
+    const candidato3 = prompt("Informe o nome do candidato 3:");
+    const quantidadeVotantes = parseInt(prompt("Informe a quantidade de alunos votantes:"));
+    const candidatos = [candidato1, candidato2, candidato3];
+    const votos = {};
 
     //PROCESSAMENTO
+    for (const candidato of candidatos) {
+        votos[candidato] = 0;
+    }
 
+    for (let contador = 0; contador < quantidadeVotantes; contador++) {
+        const voto = prompt(`Aluno ${contador + 1}, escolha o candidato (1-${quantidadeVotantes}):`);
 
+        if (votos[voto] !== undefined) {
+            votos[voto]++;
+        } else {
+            alert(`Voto inválido do aluno ${contador + 1}.`);
+        }
+    }
+
+    alert("Resultado da votação:");
+    for (const candidato in votos) {
+        const votosCandidato = votos[candidato];
+        const porcentagemVotos = (votosCandidato / quantidadeVotantes) * 100;
+        alert(`${candidato}: ${votosCandidato} votos (${porcentagemVotos.toFixed(2)}%)`);
+    }
+    
     //SAÍDA
 
 </script>
