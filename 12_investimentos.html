@@ -5,11 +5,22 @@
     */
 
     //ENTRADA
-
+       const investimentoInicial = 1000;
+    const objetivo = 2000;
+    const taxaDiaria = 0.02;
+    let dias = 0;
+    let saldo = investimentoInicial;
 
     //PROCESSAMENTO
+    for (const diaDaSemana of ["segunda", "terça", "quarta", "quinta", "sexta"]) {
+        dias++;
+        if (saldo < objetivo) {
+            saldo += saldo * taxaDiaria;
+        } else {
+            break;
+        }
+    }
 
-
-    //SAÍDA
+    alert(`Joãozinho levará ${dias} dias para alcançar R$ ${objetivo.toFixed(2)}.`);
 
 </script>
